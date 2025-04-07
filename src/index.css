@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --text-giant : 100px;
+    --font-ubuntu : Ubuntu;
+}
+
+* {
+    @apply font-ubuntu;
+}
+
+.article-main {
+    @apply w-auto h-full bg-red-500  ;
+ }
+
+.article-side {
+     @apply w-auto h-auto bg-blue-500 ; 
+ }
+
+.title-main {
+    @apply text-3xl sm:text-giant font-bold;
+}
+
+.title-side {
+    @apply text-3xl font-bold;
+}
