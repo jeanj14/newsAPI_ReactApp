@@ -22,5 +22,6 @@ export default defineConfig({
       // "@ui": resolve("src/ui"),
       // "@utils": resolve("src/utils"),
     },
+  
   },
 })
