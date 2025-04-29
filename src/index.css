@@ -4,6 +4,7 @@
 @theme {
     --text-giant : 100px;
     --font-ubuntu : Ubuntu;
+    --custom-black: rgba(0, 0, 0, 0.5)l;
 }
 
 * {
