@@ -1,4 +1,4 @@
-import { getNews } from "@api/index"
+import getNews from "@api/index"
 import { useQuery } from "@tanstack/react-query";
 import placeholder from '@assets/placeholder.jpg'
 

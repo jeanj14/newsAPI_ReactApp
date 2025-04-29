@@ -1,11 +1,7 @@
 import axios from "axios";
-import { get } from "react-hook-form";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 const NEWS_API_URL = `https://newsapi.org/v2`
-
-// array containing the categories for each article to be rendered
-const categories = ["business", "technology", "sports"];
 
 //function to fetch data from NewsAPI using axios
 const getNews = async (category) => {
@@ -19,4 +15,4 @@ const getNews = async (category) => {
   }
 }
 
-export default getNews;
+export default getNews  ;
