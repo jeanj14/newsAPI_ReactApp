@@ -1,25 +1,19 @@
-import NewsAPI from "newsapi";
-import "dotenv/config";
+import axios from "axios";
 
+const API_KEY = import.meta.env.VITE_API_KEY;
+const NEWS_API_URL = `https://newsapi.org/v2`
 
-const API_KEY = process.env.API_KEY;
-const newsapi = new NewsAPI(API_KEY);
+const categories = ["business", "technology", "sports"];
 
-async function getData(query, category) {
-    const response = await newsapi.v2.topHeadlines({
-        q: `${query}`,
-        category: `${category}`,
-        language: 'en',
-        country: 'us',
-        sortBy: 'publishedAt'
-      })
-      const articles = response.articles
-    return articles;
+const getNews = async (category) => {
+  try {
+    const response = await axios.get(`${NEWS_API_URL}/top-headlines?category=${category}&apiKey=${API_KEY}`);
+    const data = response.data;
+    const articles = data.articles;
+    return articles.map( (article) => ({...article, category}) );
+  } catch (error) {
+    return error
+  }
 }
-// const topTrending = await getData('', 'general')
-const topTech = await getData('', 'technology')
-const topEntertainment = await getData('', 'entertainment')
-const topSports = await getData('', 'sports')
 
-export { topTech, topEntertainment, topSports }
-
+export { getNews }
