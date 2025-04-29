@@ -4,6 +4,7 @@ import placeholder from '@assets/placeholder.jpg'
 
 function ArticleContent(props){
     const category = props.category;
+    // in useQuery, category is used as queryKey, queryFn uses async function that calls the getNews function to fetch data
     const { data, isLoading } = useQuery({
         queryKey: ["articles", category],
         queryFn: async () => {
@@ -16,8 +17,8 @@ function ArticleContent(props){
     else {
         const randomIndex = Math.floor(Math.random() * data.length);
         const article = data[randomIndex];
-        const author = article.author ?? article.source.name;
-        const articleBg = article.urlToImage ?? placeholder;
+        const author = article.author ?? article.source.name; //if author name is null, source name of article is used instead
+        const articleBg = article.urlToImage ?? placeholder; //if image data is null, placeholder image is used as replacement
         const publishedAt = article.publishedAt.slice(0, 10);
         const bgStyle = {
             backgroundImage: `url(${articleBg})`,
@@ -26,8 +27,6 @@ function ArticleContent(props){
             height: `100%`
 
         };
-        console.log(article);
-        console.log(article.urlToImage);
         return <div className="flex flex-col justify-end" style={bgStyle} >
             <div className="bg-stone-950/50 mask-t-from-85% w-full pt-5 px-2.5">
             <p className="text-sm text-white z-0">{article.category}</p>

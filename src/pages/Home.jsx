@@ -1,10 +1,7 @@
 import Article from "@articles/Article"
-import { useEffect, useState } from "react"
 
-
-/* useState to store site values from API rendered on the websites */
+/* category is passed in as a prop to article components */
 function Home(){
-    // console.log(topTech);
     return <div className="h-screen bg-green-500">
         <div className="w-full h-1/2 p-2.5">
         <Article type="main" category="business"/>
