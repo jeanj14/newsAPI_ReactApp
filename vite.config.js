@@ -15,6 +15,9 @@ export default defineConfig(({ mode }) => {
   return {
     // vite config
     plugins: [react(), tailwindcss()],
+    build:{
+      target: "esnext", // or "es2019",
+    },
     resolve: {
       alias: {
         "@app": resolve("src"),
