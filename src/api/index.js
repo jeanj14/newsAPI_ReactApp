@@ -5,6 +5,7 @@ const NEWS_API_URL = `https://newsapi.org/v2`
 const getNews = async (category) => {
   try {
     // const response = await axios.get(`${NEWS_API_URL}/top-headlines?category=${category}&apiKey=${API_KEY}`);
+    console.log("API key at runtime:", import.meta.env.VITE_API_KEY);
     const response = await fetch(`${NEWS_API_URL}/top-headlines?category=${category}&apiKey=${API_KEY}`)
     const data = await response.json() 
     const articles = data.articles;
