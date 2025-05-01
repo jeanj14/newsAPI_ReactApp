@@ -1,15 +1,16 @@
-import { Routes, Route} from "react-router-dom";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Header from "@header/Header";
 import Home from "@pages/Home";
 import Footer from "@footer/Footer";
 
+const queryClient = new QueryClient();
+
 function App(){
       return <>
       <Header/>
-      <Routes>
-            <Route path="/" element={<Home />}/>
-            <Route path="/hi" element={<h1>Hi</h1>}/>
-      </Routes>
+      <QueryClientProvider client={queryClient}>
+            <Home />
+      </QueryClientProvider>
       <Footer/>
       </>
 }
