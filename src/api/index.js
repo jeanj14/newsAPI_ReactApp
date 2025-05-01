@@ -9,10 +9,17 @@ const getNews = async (category) => {
     const response = await fetch(`${NEWS_API_URL}/top-headlines?category=${category}&apiKey=${API_KEY}`)
     const data = await response.json() 
     const articles = data.articles;
+
+    if (!(articles)){
+      console.error("No articles array returned:", data);
+      return [];
+    }
+    
     console.log(articles)
     return articles //category is attached with map() to each news article to help
   } catch (error) {
-    return error
+    console.error(`Fetch error : ${error}`)
+    return []
   }
 }
 
