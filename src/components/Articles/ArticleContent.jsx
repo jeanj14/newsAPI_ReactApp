@@ -29,7 +29,7 @@ function ArticleContent(props){
         };
         return <div className="flex flex-col justify-end" style={bgStyle} >
             <div className="bg-stone-950/50 mask-t-from-85% w-full pt-5 px-2.5">
-            <p className="text-sm text-white z-0">{article.category}</p>
+            <p className="text-sm text-white z-0">{category}</p>
             <h1 className={`text-white title-${props.type} max-w-full truncate`}>{article.title}</h1>
         <p className="text-white">{author} - {publishedAt}</p>
             </div>
