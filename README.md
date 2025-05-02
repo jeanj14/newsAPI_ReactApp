@@ -1,6 +1,6 @@
 # Live News Tabloid
 
-This is a React web application that fetches News Articles from RESTful API , NewsAPI. You can visit the site [here](https://link-url-here.org) 
+This is a React web application that fetches News Articles from am RESTful API. You can visit the site [here](https://link-url-here.org) 
 
 This projects use of the following : 
 - ReactJS
